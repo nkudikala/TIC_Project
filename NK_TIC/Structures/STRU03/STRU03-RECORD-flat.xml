@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root t='150' id='1' V150='13' creationTimestamp='0x14dd3aba6af' V1='4' name='STRU03-RECORD' incarnation='70'>
+  <rootElem t='167' id='2' V167='21' V283='1' occurMaxTimes='1' minSize='-1' maxSize='-1' groupType='1' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' V1='4' name='STRU03-RECORD'>
+    <structNode t='150' idref='1'/>
+    <child t='167' id='3' V167='21' V283='1' occurMaxTimes='-1' minSize='-1' maxSize='-1' groupType='1' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' V1='4' name='Record'>
+      <structNode t='150' idref='1'/>
+      <child t='167' id='4' V167='21' V283='1' occurMinTimes='1' occurMaxTimes='1' minSize='6' maxSize='6' dataType='22' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' V1='4' name='COM-NUMBER' description='9(6)'>
+        <structNode t='150' idref='1'/>
+      </child>
+      <child t='167' id='5' V167='21' V283='1' occurMinTimes='1' occurMaxTimes='1' minSize='20' maxSize='20' dataType='2' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' V1='4' name='COM-NAME' description='X(20)'>
+        <structNode t='150' idref='1'/>
+      </child>
+      <child t='167' id='6' V167='21' V283='1' occurMinTimes='1' occurMaxTimes='1' minSize='8' maxSize='8' dataType='2' decimalPositions='2' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' V1='4' name='COM-AMOUNT' description='9(5)V99'>
+        <structNode t='150' idref='1'/>
+      </child>
+      <child t='167' id='7' V167='21' V283='1' occurMinTimes='5' occurMaxTimes='5' minSize='-1' maxSize='-1' groupType='1' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' V1='4' name='COM-ARRAY'>
+        <structNode t='150' idref='1'/>
+        <child t='167' id='8' V167='21' V283='1' occurMinTimes='1' occurMaxTimes='1' minSize='2' maxSize='2' dataType='11' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' V1='4' name='COM-ITEM1' description='S9(4)'>
+          <structNode t='150' idref='1'/>
+        </child>
+        <child t='167' id='9' V167='21' V283='1' occurMinTimes='1' occurMaxTimes='1' minSize='2' maxSize='2' dataType='2' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' V1='4' name='COM-ITEM2' description='X(2)'>
+          <structNode t='150' idref='1'/>
+        </child>
+      </child>
+    </child>
+  </rootElem>
+  <defaultRep t='173' id='10' V170='10' V693='1' delimiter=',' numberEncoding='1' padOccurs='true' outputAsDelimited='true' outputDelimitedHeader='true' structName='Structures/STRU03/STRU03-RECORD-flat.xml' V690='1' padOutput='true' trimInput='true' ignoreExcluded='true' fixInvalidCharacters='true' V1='4' name='Flat'>
+  </defaultRep>
+  <rowElem t='167' idref='3'/>
+  <child t='162' id='11' V1='4' name='Representations'>
+    <child t='173' idref='10'/>
+    <child t='172' id='12' V172='6' autoFixNamespaceMismatch='true' V170='10' V692='1' V690='1' ignoreExcluded='true' fixInvalidCharacters='true' V1='4' name='XML'>
+    </child>
+  </child>
+  <child t='165' id='13' V1='4' name='Document Bindings'>
+    <child t='166' id='14' V166='5' docType='1' docReposPath='/TDM/Sample Data/STRU03/STRU03-RECORD/stru03.bin' V1='4' name='/STRU03-RECORD'>
+      <elemNode t='167' idref='2'/>
+    </child>
+  </child>
+</root>
