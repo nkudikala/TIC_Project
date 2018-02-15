@@ -12,5 +12,6 @@ Structures,com.oaklandsw.base,order,0
 Structures/I.xml,com.oaklandsw.base,references.0,Sample Data/I/I
 Structures/O.xml,com.oaklandsw.base,references.0,Sample Data/O/O
 Structures/O.xml,com.oaklandsw.base,references.1,Namespace Containers/O.xml
+Structures/TDM_multi_outputs_mysql.xml,com.oaklandsw.base,references.0,Namespace Containers/TDM_multi_outputs_mysql.xml
 assembly.xml,com.oaklandsw.base,order,9
 pom.xml,com.oaklandsw.base,order,8
