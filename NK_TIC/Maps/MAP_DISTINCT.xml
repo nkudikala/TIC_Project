@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root t='190' id='1' V190='11' inStruct='Structures/O.xml' outStruct='Structures/O.xml' inputRep='172' outputRep='172' nextMap='' inputStructUserName='O' outputStructUserName='O' V1='4' name='MAP_DISTINCT' incarnation='190'>
+  <inputMapElem t='200' id='4' V200='7' input='true' shown='5' structElemExists='true' V283='2' occurMinTimes='1' occurMaxTimes='1' minSize='-1' maxSize='-1' groupType='1' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' V1='4' name='Root'>
+    <mapNode t='190' idref='1'/>
+    <child t='200' id='5' V200='7' input='true' shown='5' structElemExists='true' V283='2' occurMaxTimes='-1' minSize='-1' maxSize='-1' groupType='1' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' V1='4' name='Record'>
+      <mapNode t='190' idref='1'/>
+      <child t='200' id='6' V200='7' input='true' shown='5' structElemExists='true' V283='2' occurMinTimes='1' occurMaxTimes='1' minSize='-1' maxSize='-1' dataType='2' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' V1='4' name='id'>
+        <mapNode t='190' idref='1'/>
+      </child>
+      <child t='200' id='7' V200='7' input='true' shown='7' structElemExists='true' V283='2' occurMinTimes='1' occurMaxTimes='1' minSize='-1' maxSize='-1' groupType='1' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' V1='4' name='Zips'>
+        <mapNode t='190' idref='1'/>
+        <child t='200' id='8' V200='7' input='true' shown='5' structElemExists='true' V283='2' occurMinTimes='1' occurMaxTimes='-1' minSize='-1' maxSize='-1' dataType='2' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' V1='4' name='Zipcode'>
+          <mapNode t='190' idref='1'/>
+        </child>
+      </child>
+    </child>
+  </inputMapElem>
+  <outputMapElem t='200' id='9' V200='7' shown='5' structElemExists='true' V283='2' occurMinTimes='1' occurMaxTimes='1' minSize='-1' maxSize='-1' groupType='1' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' modifiedFromParent_loop='true' V1='4' name='Root'>
+    <mapNode t='190' idref='1'/>
+    <loop>SimpleLoop([autoAdded="true"],in$/Root,{Filter},{Sort Keys},{Contexts})</loop>
+    <child t='200' id='10' V200='7' shown='5' structElemExists='true' V283='2' occurMaxTimes='-1' minSize='-1' maxSize='-1' groupType='1' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' modifiedFromParent_loop='true' V1='4' name='Record'>
+      <mapNode t='190' idref='1'/>
+      <loop>SimpleLoop([distinctChildElem="id"],in$/Root/Record,{Filter},{Sort Keys},{Contexts})</loop>
+      <child t='200' id='11' V200='7' shown='5' structElemExists='true' V283='2' occurMinTimes='1' occurMaxTimes='1' minSize='-1' maxSize='-1' dataType='2' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' modifiedFromParent_value='true' V1='4' name='id'>
+        <mapNode t='190' idref='1'/>
+        <value>in$/Root/Record/id</value>
+      </child>
+      <child t='200' id='12' V200='7' shown='5' structElemExists='true' V283='2' occurMinTimes='1' occurMaxTimes='1' minSize='-1' maxSize='-1' groupType='1' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' V1='4' name='Zips'>
+        <mapNode t='190' idref='1'/>
+        <child t='200' id='13' V200='7' shown='5' structElemExists='true' V283='2' occurMinTimes='1' occurMaxTimes='-1' minSize='-1' maxSize='-1' dataType='2' repHandlerStruct='' visible='true' inheritsFrom='' V281='13' modifiedFromParent_loop='true' modifiedFromParent_value='true' V1='4' name='Zipcode'>
+          <mapNode t='190' idref='1'/>
+          <loop>SimpleLoop(in$/Root/Record/Zips/Zipcode,{Filter},{Sort Keys},{Contexts})</loop>
+          <value>in$/Root/Record/Zips/Zipcode</value>
+        </child>
+      </child>
+    </child>
+  </outputMapElem>
+  <inputRepRuntime t='692' id='14' V692='1' unnamedElemsNamespace='1' V690='1'>
+    <namespaceContainers t='220' ref='Namespace Containers/O.xml'/>
+  </inputRepRuntime>
+  <outputRepRuntime t='692' idref='14'/>
+  <valueSets></valueSets>
+  <inputXmlRepRuntime t='692' idref='14'/>
+  <outputXmlRepRuntime t='692' idref='14'/>
+  <child t='165' id='2' V1='4' name='Document Bindings'>
+    <child t='166' id='14' V166='5' docType='1' docReposPath='/TDM_GROUPBY/Sample Data/O/DUP' V1='4' name='in$/Root'>
+      <elemNode t='200' idref='4'/>
+    </child>
+    <child t='166' id='15' V166='5' docType='2' docReposPath='/TDM_GROUPBY/Sample Data/O/DUP' V1='4' name='out$/Root'>
+      <elemNode t='200' idref='9'/>
+    </child>
+  </child>
+  <child t='201' id='3' V1='4' name='Inherits From'>
+  </child>
+</root>

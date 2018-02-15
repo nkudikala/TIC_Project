@@ -1,9 +1,16 @@
 /,com.oaklandsw.base,version,1
 Databases,com.oaklandsw.base,order,5
 Maps,com.oaklandsw.base,order,1
+Maps/MAP_DISTINCT.xml,com.oaklandsw.base,references.0,Structures/O.xml
+Maps/MAP_GROUP_BY.xml,com.oaklandsw.base,references.0,Structures/O.xml
+Maps/MAP_GROUP_BY.xml,com.oaklandsw.base,references.1,Structures/I.xml
+Maps/MAP_GROUP_BY.xml,com.oaklandsw.base,references.2,Maps/MAP_DISTINCT.xml
 Namespace Containers,com.oaklandsw.base,order,4
 Reports,com.oaklandsw.base,order,7
 Sample Data,com.oaklandsw.base,order,6
 Structures,com.oaklandsw.base,order,0
+Structures/I.xml,com.oaklandsw.base,references.0,Sample Data/I/I
+Structures/O.xml,com.oaklandsw.base,references.0,Sample Data/O/O
+Structures/O.xml,com.oaklandsw.base,references.1,Namespace Containers/O.xml
 assembly.xml,com.oaklandsw.base,order,9
 pom.xml,com.oaklandsw.base,order,8

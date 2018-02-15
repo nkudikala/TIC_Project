@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<Root>
+  <Record>
+    <id>1</id>
+    <Zips>
+      <Zipcode>44100</Zipcode>
+      <Zipcode>44200</Zipcode>
+    </Zips>
+  </Record>
+  <Record>
+    <id>1</id>
+    <Zips>
+      <Zipcode>44100</Zipcode>
+      <Zipcode>44200</Zipcode>
+    </Zips>
+  </Record>
+  <Record>
+    <id>2</id>
+    <Zips>
+      <Zipcode>69002</Zipcode>
+      <Zipcode>56410</Zipcode>
+      <Zipcode>56100</Zipcode>
+    </Zips>
+  </Record>
+  <Record>
+    <id>2</id>
+    <Zips>
+      <Zipcode>69002</Zipcode>
+      <Zipcode>56410</Zipcode>
+      <Zipcode>56100</Zipcode>
+    </Zips>
+  </Record>
+  <Record>
+    <id>2</id>
+    <Zips>
+      <Zipcode>69002</Zipcode>
+      <Zipcode>56410</Zipcode>
+      <Zipcode>56100</Zipcode>
+    </Zips>
+  </Record>
+</Root>
