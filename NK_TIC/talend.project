@@ -485,4 +485,9 @@
   </TalendProperties:Project>
   <TalendProperties:User xmi:id="_r2DNUP_AEeerzsIN5Z2APQ" login="nkudikala@csm.talend.com" firstName="Nitin" lastName="Kudikala" type="DI"/>
   <TalendProperties:User xmi:id="_dZoWERGSEeipXaN_YGBdhw" login="admin@company.com"/>
+  <TalendProperties:User xmi:id="__OZNsBZLEei9irnzw8Mcyw" login="test_lokesh@csm.talend.com" firstName="Test" lastName="Lokesh" type="DI"/>
+  <TalendProperties:User xmi:id="__OZNsRZLEei9irnzw8Mcyw" login="mgainhao@csm.talend.com" firstName="Michael" lastName="Gainhao" type="DI"/>
+  <TalendProperties:User xmi:id="__OZNshZLEei9irnzw8Mcyw" login="vsundaram@csm.talend.com" firstName="Venkatachalam" lastName="Sundaram" type="DI"/>
+  <TalendProperties:User xmi:id="__OZNsxZLEei9irnzw8Mcyw" login="danderson@csm.talend.com" firstName="Dale" lastName="Anderson" type="DI"/>
+  <TalendProperties:User xmi:id="__OZNtBZLEei9irnzw8Mcyw" login="lgangadharaiah@csm.talend.com" firstName="Lokesh" lastName="Gangadharaiah" type="DI"/>
 </xmi:XMI>
