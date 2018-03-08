@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore">
+  <TalendMetadata:DatabaseConnection xmi:id="_pjCfECKBEeiHMMLjE-Nw2g" name="MySql_Local" id="_PscUgCKBEeiHMMLjE-Nw2g" label="MySql_Local" dataPackage="_plUXACKBEeiHMMLjE-Nw2g _plU-ECKBEeiHMMLjE-Nw2g _plU-ESKBEeiHMMLjE-Nw2g _plU-EiKBEeiHMMLjE-Nw2g _plU-EyKBEeiHMMLjE-Nw2g _plU-FCKBEeiHMMLjE-Nw2g _plU-FSKBEeiHMMLjE-Nw2g _plU-FiKBEeiHMMLjE-Nw2g _plU-FyKBEeiHMMLjE-Nw2g _plU-GCKBEeiHMMLjE-Nw2g _plU-GSKBEeiHMMLjE-Nw2g _plU-GiKBEeiHMMLjE-Nw2g _plU-GyKBEeiHMMLjE-Nw2g _plU-HCKBEeiHMMLjE-Nw2g _plU-HSKBEeiHMMLjE-Nw2g _plU-HiKBEeiHMMLjE-Nw2g _plU-HyKBEeiHMMLjE-Nw2g _plU-ICKBEeiHMMLjE-Nw2g _plU-ISKBEeiHMMLjE-Nw2g _plU-IiKBEeiHMMLjE-Nw2g _plU-IyKBEeiHMMLjE-Nw2g _plU-JCKBEeiHMMLjE-Nw2g _plU-JSKBEeiHMMLjE-Nw2g _plU-JiKBEeiHMMLjE-Nw2g _plU-JyKBEeiHMMLjE-Nw2g _plU-KCKBEeiHMMLjE-Nw2g _plU-KSKBEeiHMMLjE-Nw2g _plU-KiKBEeiHMMLjE-Nw2g _plU-KyKBEeiHMMLjE-Nw2g _plU-LCKBEeiHMMLjE-Nw2g _plU-LSKBEeiHMMLjE-Nw2g _plU-LiKBEeiHMMLjE-Nw2g _plU-LyKBEeiHMMLjE-Nw2g _plU-MCKBEeiHMMLjE-Nw2g _plU-MSKBEeiHMMLjE-Nw2g _plU-MiKBEeiHMMLjE-Nw2g _plU-MyKBEeiHMMLjE-Nw2g _plU-NCKBEeiHMMLjE-Nw2g _plU-NSKBEeiHMMLjE-Nw2g _plU-NiKBEeiHMMLjE-Nw2g _plU-NyKBEeiHMMLjE-Nw2g _plU-OCKBEeiHMMLjE-Nw2g _plU-OSKBEeiHMMLjE-Nw2g" DatabaseType="MySQL" DriverClass="org.gjt.mm.mysql.Driver" URL="jdbc:mysql://localhost:3306/?noDatetimeStringSync=true" dbVersionString="MYSQL_5" Port="3306" Username="root" Password="NZNgK6DuncI=" ServerName="localhost" DatasourceName="" FileFieldName="" SID="" SqlSynthax="SQL Syntax" DbmsId="mysql_id" ProductId="MYSQL" AdditionalParams="noDatetimeStringSync=true" StandardSQL="true" SQLMode="false" UiSchema="">
+    <taggedValue xmi:id="_pjDGICKBEeiHMMLjE-Nw2g" tag="Is Conn Need Reload" value="false"/>
+    <taggedValue xmi:id="_pjUy8CKBEeiHMMLjE-Nw2g" tag="package filter" value=""/>
+    <taggedValue xmi:id="_pjYdUCKBEeiHMMLjE-Nw2g" tag="Status" value=""/>
+    <taggedValue xmi:id="_pjZEYCKBEeiHMMLjE-Nw2g" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_pjZEYSKBEeiHMMLjE-Nw2g" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_pjZEYiKBEeiHMMLjE-Nw2g" tag="Description" value=""/>
+    <taggedValue xmi:id="_pjZEYyKBEeiHMMLjE-Nw2g" tag="Author" value=""/>
+    <taggedValue xmi:id="_pjZEZCKBEeiHMMLjE-Nw2g" tag="otherParameter"/>
+    <taggedValue xmi:id="_pjkDgCKBEeiHMMLjE-Nw2g" tag="DB ProductName" value="MySQL"/>
+    <taggedValue xmi:id="_pjkDgSKBEeiHMMLjE-Nw2g" tag="DB ProductVersion" value="5.7.11-log"/>
+    <taggedValue xmi:id="_pjkDgiKBEeiHMMLjE-Nw2g" tag="DB IdentifierQuoteString" value="`"/>
+    <parameters xmi:id="_pjDGISKBEeiHMMLjE-Nw2g" key="CONN_PARA_KEY_USERNAME" value="root"/>
+  </TalendMetadata:DatabaseConnection>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plUXACKBEeiHMMLjE-Nw2g" name="information_schema" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-ECKBEeiHMMLjE-Nw2g" name="amc" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-ESKBEeiHMMLjE-Nw2g" name="bf_master" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-EiKBEeiHMMLjE-Nw2g" name="bf_staging" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-EyKBEeiHMMLjE-Nw2g" name="chinook" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-FCKBEeiHMMLjE-Nw2g" name="copy_party_640_master" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-FSKBEeiHMMLjE-Nw2g" name="copy_party_640_staging" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-FiKBEeiHMMLjE-Nw2g" name="copy_party_master" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-FyKBEeiHMMLjE-Nw2g" name="copy_party_staging" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-GCKBEeiHMMLjE-Nw2g" name="crossreferencing_640_master" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-GSKBEeiHMMLjE-Nw2g" name="crossreferencing_master" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-GiKBEeiHMMLjE-Nw2g" name="customer" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-GyKBEeiHMMLjE-Nw2g" name="fktest_master" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-HCKBEeiHMMLjE-Nw2g" name="fktest_staging" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-HSKBEeiHMMLjE-Nw2g" name="mysql" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-HiKBEeiHMMLjE-Nw2g" name="party_640_master" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-HyKBEeiHMMLjE-Nw2g" name="party_640_staging" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-ICKBEeiHMMLjE-Nw2g" name="party_master" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-ISKBEeiHMMLjE-Nw2g" name="party_staging" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-IiKBEeiHMMLjE-Nw2g" name="performance_schema" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-IyKBEeiHMMLjE-Nw2g" name="reporting_640_master" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-JCKBEeiHMMLjE-Nw2g" name="reporting_640_staging" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-JSKBEeiHMMLjE-Nw2g" name="reporting_master" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-JiKBEeiHMMLjE-Nw2g" name="reporting_staging" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-JyKBEeiHMMLjE-Nw2g" name="repository_manager" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-KCKBEeiHMMLjE-Nw2g" name="sys" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-KSKBEeiHMMLjE-Nw2g" name="tac_640" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-KiKBEeiHMMLjE-Nw2g" name="tac_641" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-KyKBEeiHMMLjE-Nw2g" name="talend_administrator_611" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-LCKBEeiHMMLjE-Nw2g" name="talend_administrator_621" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-LSKBEeiHMMLjE-Nw2g" name="talend_administrator_640" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-LiKBEeiHMMLjE-Nw2g" name="talend_dq" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-LyKBEeiHMMLjE-Nw2g" name="talend_dq_621" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-MCKBEeiHMMLjE-Nw2g" name="talend_misc" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-MSKBEeiHMMLjE-Nw2g" name="tdsc_db" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-MiKBEeiHMMLjE-Nw2g" name="tdsc_db_621" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-MyKBEeiHMMLjE-Nw2g" name="tdsc_db_640" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-NCKBEeiHMMLjE-Nw2g" name="tmdm_db_system" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-NSKBEeiHMMLjE-Nw2g" name="tmdm_db_system_640" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-NiKBEeiHMMLjE-Nw2g" name="truecar_dealer_master" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-NyKBEeiHMMLjE-Nw2g" name="truecar_dealer_staging" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-OCKBEeiHMMLjE-Nw2g" name="updatereport_640_master" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+  <orgomg.cwm.resource.relational:Catalog xmi:id="_plU-OSKBEeiHMMLjE-Nw2g" name="updatereport_master" dataManager="_pjCfECKBEeiHMMLjE-Nw2g"/>
+</xmi:XMI>
