@@ -122,8 +122,6 @@
     </ItemsRelations>
     <ItemsRelations xmi:id="_pfLwYC0iEei6IYZIzCyCww">
       <baseItem xmi:id="_pfLwYS0iEei6IYZIzCyCww" id="_tV9n4IAmEea0dMH1L2dS-w" version="0.1" type="job"/>
-      <relatedItems xmi:id="_pfLwYi0iEei6IYZIzCyCww" id="_Rn-1cGS9EeaFWqzLVH0UIA" version="Latest" type="property"/>
-      <relatedItems xmi:id="_pfLwYy0iEei6IYZIzCyCww" id="_5nh0IBjAEeafJ-7JUz2IUA" version="Latest" type="property"/>
       <relatedItems xmi:id="_pfLwZC0iEei6IYZIzCyCww" id="SQLike" version="Latest" type="routine"/>
       <relatedItems xmi:id="_pfLwZS0iEei6IYZIzCyCww" id="Numeric" version="Latest" type="routine"/>
       <relatedItems xmi:id="_pfLwZi0iEei6IYZIzCyCww" id="tic_word_titleCase" version="Latest" type="routine"/>
@@ -158,9 +156,8 @@
       <relatedItems xmi:id="_pfLwgy0iEei6IYZIzCyCww" id="A2_standardizeaddressTstandardizerow_1" version="Latest" type="routine"/>
       <relatedItems xmi:id="_pfLwhC0iEei6IYZIzCyCww" id="String_Split" version="Latest" type="routine"/>
       <relatedItems xmi:id="_pfLwhS0iEei6IYZIzCyCww" id="_Rn-1cGS9EeaFWqzLVH0UIA - cust" version="Latest" type="schema"/>
-      <relatedItems xmi:id="_pfLwhi0iEei6IYZIzCyCww" id="_5nh0IBjAEeafJ-7JUz2IUA - CUST_LOCATIONS" version="Latest" type="schema"/>
-      <relatedItems xmi:id="_pfLwhy0iEei6IYZIzCyCww" id="_2SadQH6sEeafwvQjBZtPRg - metadata" version="Latest" type="schema"/>
-      <relatedItems xmi:id="_pfLwiC0iEei6IYZIzCyCww" id="_O7pc4Ht4EeaYp-7Uj4M6VA - context" version="Latest" type="schema"/>
+      <relatedItems xmi:id="_QSIYcC0qEei6IYZIzCyCww" id="DataMasking" version="Latest" type="routine"/>
+      <relatedItems xmi:id="_QSIYcS0qEei6IYZIzCyCww" id="TalendStringUtil" version="Latest" type="routine"/>
     </ItemsRelations>
     <migrationTask xmi:id="_s1ppIP_AEeerzsIN5Z2APQ" id="org.talend.repository.localprovider.RemoveRoutineFolderTask" breaks="5.1.1" version="5.1.2" status="noimpact"/>
     <migrationTask xmi:id="_s1qQMP_AEeerzsIN5Z2APQ" id="org.talend.repository.localprovider.model.migration.ChangeXmiSerialization" breaks="5.1.1" version="5.1.2" status="noimpact"/>
