@@ -549,4 +549,7 @@
   <TalendProperties:User xmi:id="__OZNsxZLEei9irnzw8Mcyw" login="danderson@csm.talend.com" firstName="Dale" lastName="Anderson" type="DI"/>
   <TalendProperties:User xmi:id="__OZNtBZLEei9irnzw8Mcyw" login="lgangadharaiah@csm.talend.com" firstName="Lokesh" lastName="Gangadharaiah" type="DI"/>
   <TalendProperties:User xmi:id="_5_NpoS0hEei6IYZIzCyCww" login="rsree@csm.talend.com" firstName="Rekha" lastName="Sree" type="DI"/>
+  <TalendProperties:User xmi:id="_NC8RUVPGEeifNJ55IE7qMg" login="pnomikos@csm.talend.com" firstName="Petros" lastName="Nomikos" type="DQ"/>
+  <TalendProperties:User xmi:id="_NC8RUlPGEeifNJ55IE7qMg" login="bbarranco@csm.talend.com" firstName="Benoit" lastName="Barranco" type="DQ"/>
+  <TalendProperties:User xmi:id="_NC8RU1PGEeifNJ55IE7qMg" login="zjaveed@csm.talend.com" firstName="Zeeshan" lastName="Javeed" type="DQ"/>
 </xmi:XMI>
