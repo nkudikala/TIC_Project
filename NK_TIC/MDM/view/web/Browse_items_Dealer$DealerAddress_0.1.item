@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSViewE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_vvTykPbNEeSnMfM4oFR5jA" name="Browse_items_Dealer#DealerAddress" description="DealerAddress" timestamp="1449180436750" digestValue="d1ba3d461a021c10e0959b5800c6de58" transformerPK="">
+  <searchableBusinessElements>Dealer/DealerID</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/DealerName</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/Make</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/PhysicalAddress</searchableBusinessElements>
+  <searchableBusinessElements>Address/AddressID</searchableBusinessElements>
+  <searchableBusinessElements>Address/ZipCode</searchableBusinessElements>
+  <viewableBusinessElements>Dealer/DealerID</viewableBusinessElements>
+  <viewableBusinessElements>Dealer/DealerName</viewableBusinessElements>
+  <viewableBusinessElements>Dealer/Make</viewableBusinessElements>
+  <viewableBusinessElements>Dealer/PhysicalAddress</viewableBusinessElements>
+  <viewableBusinessElements>Address/AddressID</viewableBusinessElements>
+  <viewableBusinessElements>Address/ZipCode</viewableBusinessElements>
+  <whereConditions xmi:id="_GCcykPbQEeSnMfM4oFR5jA" leftPath="Dealer/PhysicalAddress" rightValueOrPath="Address/AddressID">
+    <stringPredicate xmi:id="_GCcykfbQEeSnMfM4oFR5jA" value="NONE"/>
+    <operator xmi:id="_GCcykvbQEeSnMfM4oFR5jA" value="JOIN"/>
+  </whereConditions>
+  <isTransformerActive xmi:id="_GCZvQPbQEeSnMfM4oFR5jA"/>
+</mdmserverobject:WSViewE>

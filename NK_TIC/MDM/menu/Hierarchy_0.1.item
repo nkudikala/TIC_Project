@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSMenuE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_yig3wH3JEeWpbdp7WBpTxQ" name="Hierarchy" description="" timestamp="1449180453594" digestValue="00cdb81aebd4e09efe53a4b705a3589a">
+  <menuEntries xmi:id="_yig3wX3JEeWpbdp7WBpTxQ" id="Hierarchy" application="Hierarchy" context="hierarchy" icon="">
+    <descriptions xmi:id="_yig3wn3JEeWpbdp7WBpTxQ" language="fr" label="Explorateur de hiérarchie"/>
+    <descriptions xmi:id="_yig3w33JEeWpbdp7WBpTxQ" language="en" label="Hierarchy Explorer"/>
+  </menuEntries>
+</mdmserverobject:WSMenuE>

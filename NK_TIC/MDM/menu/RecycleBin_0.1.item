@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSMenuE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_x9mz4X3JEeWpbdp7WBpTxQ" name="RecycleBin" description="RecycleBin" timestamp="1449180454532" digestValue="c6ab2574241d7d7c4bf641638c70f974">
+  <menuEntries xmi:id="_x9mz4n3JEeWpbdp7WBpTxQ" id="RecycleBin" application="RecycleBin" context="recyclebin" icon="">
+    <descriptions xmi:id="_x9mz433JEeWpbdp7WBpTxQ" language="fr" label="Corbeille"/>
+    <descriptions xmi:id="_x9mz5H3JEeWpbdp7WBpTxQ" language="en" label="Recycle Bin"/>
+  </menuEntries>
+</mdmserverobject:WSMenuE>

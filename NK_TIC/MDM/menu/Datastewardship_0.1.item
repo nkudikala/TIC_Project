@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSMenuE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_yByJQH3JEeWpbdp7WBpTxQ" name="Datastewardship" description="Data Stewardship" timestamp="1449180459735" digestValue="96c10f8a5161f89e430ec6ddc6e06882">
+  <menuEntries xmi:id="_yByJQX3JEeWpbdp7WBpTxQ" id="Datastewardship" application="Datastewardship" context="datastewardship" icon="">
+    <descriptions xmi:id="_yByJQn3JEeWpbdp7WBpTxQ" language="fr" label="Data Stewardship"/>
+    <descriptions xmi:id="_yByJQ33JEeWpbdp7WBpTxQ" language="en" label="Data Stewardship"/>
+  </menuEntries>
+</mdmserverobject:WSMenuE>

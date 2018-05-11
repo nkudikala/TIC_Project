@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSMenuE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_yc0fcX3JEeWpbdp7WBpTxQ" name="BonitaWorkflowTasks" description="" timestamp="1449180466298" digestValue="3ff50b1e27de5a6c41034ad8e97fece7">
+  <menuEntries xmi:id="_yc0fcn3JEeWpbdp7WBpTxQ" id="BonitaWorkflowTasks" application="BonitaWorkflowTasks" context="workflowtasks" icon="">
+    <descriptions xmi:id="_yc0fc33JEeWpbdp7WBpTxQ" language="fr" label="Workflow UserXP"/>
+    <descriptions xmi:id="_yc0fdH3JEeWpbdp7WBpTxQ" language="en" label="Workflow UserXP"/>
+  </menuEntries>
+</mdmserverobject:WSMenuE>

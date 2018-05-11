@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSViewE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_S7vkMbu_EeSSFpkWJck6Fg" name="Browse_items_ContactInfo" description="[EN:Contact Information]" timestamp="1449180452048" digestValue="685de8e07239b5151164095f9a3e72bf" transformerPK="">
+  <searchableBusinessElements>ContactInfo/ContactID</searchableBusinessElements>
+  <searchableBusinessElements>ContactInfo/Email</searchableBusinessElements>
+  <searchableBusinessElements>ContactInfo/Phone</searchableBusinessElements>
+  <searchableBusinessElements>ContactInfo/Source</searchableBusinessElements>
+  <viewableBusinessElements>ContactInfo/ContactID</viewableBusinessElements>
+  <viewableBusinessElements>ContactInfo/Email</viewableBusinessElements>
+  <viewableBusinessElements>ContactInfo/Phone</viewableBusinessElements>
+  <viewableBusinessElements>ContactInfo/Source</viewableBusinessElements>
+  <isTransformerActive xmi:id="_2OKOYNhaEeS5CLkhQFjuUg"/>
+</mdmserverobject:WSViewE>

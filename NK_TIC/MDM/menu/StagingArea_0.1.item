@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSMenuE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_yggsoX3JEeWpbdp7WBpTxQ" name="StagingArea" description="" timestamp="1449180465439" digestValue="0cf660da2c8984ce3cfc1944f58b77b3">
+  <menuEntries xmi:id="_yggson3JEeWpbdp7WBpTxQ" id="StagingArea" application="Stagingarea" context="stagingarea" icon="">
+    <descriptions xmi:id="_yggso33JEeWpbdp7WBpTxQ" language="fr" label="Staging Area"/>
+    <descriptions xmi:id="_yggspH3JEeWpbdp7WBpTxQ" language="en" label="Staging Area"/>
+  </menuEntries>
+</mdmserverobject:WSMenuE>

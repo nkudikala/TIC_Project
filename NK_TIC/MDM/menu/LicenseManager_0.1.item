@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSMenuE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_yZVGkX3JEeWpbdp7WBpTxQ" name="LicenseManager" description="" timestamp="1449180461001" digestValue="35352a6f15bf19408c940264e1b22030">
+  <menuEntries xmi:id="_yZVGkn3JEeWpbdp7WBpTxQ" id="LicenseManager" application="LicenseManager" context="licensemanager" icon="">
+    <descriptions xmi:id="_yZVGk33JEeWpbdp7WBpTxQ" language="fr" label="Licence"/>
+    <descriptions xmi:id="_yZVGlH3JEeWpbdp7WBpTxQ" language="en" label="License"/>
+  </menuEntries>
+</mdmserverobject:WSMenuE>

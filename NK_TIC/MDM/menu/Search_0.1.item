@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSMenuE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_x74VkX3JEeWpbdp7WBpTxQ" name="Search" description="Search" timestamp="1449180440782" digestValue="2373c159799e7ca38230075ace57bba4">
+  <menuEntries xmi:id="_x74Vkn3JEeWpbdp7WBpTxQ" id="Search" application="Search" context="search" icon="">
+    <descriptions xmi:id="_x74Vk33JEeWpbdp7WBpTxQ" language="fr" label="Recherche"/>
+    <descriptions xmi:id="_x74VlH3JEeWpbdp7WBpTxQ" language="en" label="Search"/>
+  </menuEntries>
+</mdmserverobject:WSMenuE>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSViewE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_GFQjULumEeSSFpkWJck6Fg" name="Browse_items_Collection" description="[EN:Collection]" timestamp="1449180445797" digestValue="23aec038b5db3c384a52afcf49440bc6" transformerPK="">
+  <searchableBusinessElements>Collection/CollectionID</searchableBusinessElements>
+  <searchableBusinessElements>Collection/CollectionType</searchableBusinessElements>
+  <searchableBusinessElements>Collection/Address</searchableBusinessElements>
+  <searchableBusinessElements>Collection/Source</searchableBusinessElements>
+  <viewableBusinessElements>Collection/CollectionID</viewableBusinessElements>
+  <viewableBusinessElements>Collection/CollectionType</viewableBusinessElements>
+  <viewableBusinessElements>Collection/Address</viewableBusinessElements>
+  <viewableBusinessElements>Collection/Source</viewableBusinessElements>
+  <isTransformerActive xmi:id="_kHgyENhaEeS5CLkhQFjuUg"/>
+</mdmserverobject:WSViewE>

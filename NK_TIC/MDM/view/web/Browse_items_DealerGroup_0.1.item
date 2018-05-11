@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSViewE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_DhpOsLu0EeSSFpkWJck6Fg" name="Browse_items_DealerGroup" description="[EN:DealerGroup]" timestamp="1449180443797" digestValue="1c485d26d9297b7b9fa8b00288b6804e" transformerPK="">
+  <searchableBusinessElements>DealerGroup/DealerGroupID</searchableBusinessElements>
+  <searchableBusinessElements>DealerGroup/Name</searchableBusinessElements>
+  <searchableBusinessElements>DealerGroup/SalesForceID</searchableBusinessElements>
+  <searchableBusinessElements>DealerGroup/Source</searchableBusinessElements>
+  <viewableBusinessElements>DealerGroup/DealerGroupID</viewableBusinessElements>
+  <viewableBusinessElements>DealerGroup/Name</viewableBusinessElements>
+  <viewableBusinessElements>DealerGroup/Source</viewableBusinessElements>
+  <isTransformerActive xmi:id="_Up7NQNhbEeS5CLkhQFjuUg"/>
+</mdmserverobject:WSViewE>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSMenuE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_yet84X3JEeWpbdp7WBpTxQ" name="CrossReference" description="CrossReference" timestamp="1449180463626" digestValue="22e9471ab1c8795fc5ad406a5a44794e">
+  <menuEntries xmi:id="_yet84n3JEeWpbdp7WBpTxQ" id="CrossReference" application="CrossReference" context="crossreference" icon="">
+    <descriptions xmi:id="_yet8433JEeWpbdp7WBpTxQ" language="fr" label="Références Croisées"/>
+    <descriptions xmi:id="_yet85H3JEeWpbdp7WBpTxQ" language="en" label="Cross Referencing"/>
+  </menuEntries>
+</mdmserverobject:WSMenuE>

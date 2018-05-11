@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSMenuE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_ykTAcX3JEeWpbdp7WBpTxQ" name="UserManager" description="Manage users and Roles" timestamp="1449180464517" digestValue="ea826a4204e21d5bc24173bd9856224b">
+  <menuEntries xmi:id="_ykTAcn3JEeWpbdp7WBpTxQ" id="UserManager" application="UserManager" context="usermanager" icon="">
+    <descriptions xmi:id="_ykTngH3JEeWpbdp7WBpTxQ" language="fr" label="Gestion des utilisateurs"/>
+    <descriptions xmi:id="_ykTngX3JEeWpbdp7WBpTxQ" language="en" label="Manage Users"/>
+  </menuEntries>
+</mdmserverobject:WSMenuE>

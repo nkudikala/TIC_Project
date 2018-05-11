@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSViewE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_eWHCoLunEeSSFpkWJck6Fg" name="Browse_items_Make" description="[EN:Make]" timestamp="1449180444797" digestValue="1b8bb3d9bd67ade152998bba32990fed" transformerPK="">
+  <searchableBusinessElements>Make/MakeID</searchableBusinessElements>
+  <searchableBusinessElements>Make/ChromeID</searchableBusinessElements>
+  <searchableBusinessElements>Make/MakeName</searchableBusinessElements>
+  <searchableBusinessElements>Make/Source</searchableBusinessElements>
+  <viewableBusinessElements>Make/MakeID</viewableBusinessElements>
+  <viewableBusinessElements>Make/ChromeID</viewableBusinessElements>
+  <viewableBusinessElements>Make/MakeName</viewableBusinessElements>
+  <viewableBusinessElements>Make/Source</viewableBusinessElements>
+  <isTransformerActive xmi:id="_aYq4wNhbEeS5CLkhQFjuUg"/>
+</mdmserverobject:WSViewE>

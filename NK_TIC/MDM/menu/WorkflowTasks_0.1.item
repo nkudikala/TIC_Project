@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSMenuE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_yJ6KgX3JEeWpbdp7WBpTxQ" name="WorkflowTasks" description="" timestamp="1449180439516" digestValue="67fc64a6a51f92fc895a6746c368801f">
+  <menuEntries xmi:id="_yJ6Kgn3JEeWpbdp7WBpTxQ" id="WorkflowTasks" application="WorkflowTasks" context="workflowtasks" icon="">
+    <descriptions xmi:id="_yJ6Kg33JEeWpbdp7WBpTxQ" language="fr" label="Tâches de workflow"/>
+    <descriptions xmi:id="_yJ6KhH3JEeWpbdp7WBpTxQ" language="en" label="Workflow Tasks"/>
+  </menuEntries>
+</mdmserverobject:WSMenuE>

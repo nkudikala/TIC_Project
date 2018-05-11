@@ -1,0 +1,561 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:import namespace="http://www.w3.org/2001/XMLSchema"/>
+	<xsd:element name="Dealer" type="DealerType">
+		<xsd:annotation>
+			<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:unique name="Dealer">
+			<xsd:selector xpath="."/>
+			<xsd:field xpath="DealerID"/>
+		</xsd:unique>
+	</xsd:element>
+	<xsd:element name="Make" type="MakeType">
+		<xsd:annotation>
+			<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:unique name="Make">
+			<xsd:selector xpath="."/>
+			<xsd:field xpath="MakeID"/>
+		</xsd:unique>
+	</xsd:element>
+	<xsd:element name="Address" type="AddressType">
+		<xsd:annotation>
+			<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:unique name="Address">
+			<xsd:selector xpath="."/>
+			<xsd:field xpath="AddressID"/>
+		</xsd:unique>
+	</xsd:element>
+	<xsd:element name="ContactInfo" type="ContactType">
+		<xsd:annotation>
+			<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+			<xsd:appinfo source="X_Label_EN">Contact Information</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:unique name="ContactInfo">
+			<xsd:selector xpath="."/>
+			<xsd:field xpath="ContactID"/>
+		</xsd:unique>
+	</xsd:element>
+	<xsd:element name="Collection" type="CollectionType">
+		<xsd:annotation>
+			<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:unique name="Collection">
+			<xsd:selector xpath="."/>
+			<xsd:field xpath="CollectionID"/>
+		</xsd:unique>
+	</xsd:element>
+	<xsd:complexType name="AddressType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="AddressID" type="AUTO_INCREMENT">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Address1" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Address2" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="City" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ZipCode" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="State" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Latitude" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Longitude" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="AltLatitude" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="AltLongitude" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="AddressKey" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Type" type="Address">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Source" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CollectionType">
+		<xsd:all>
+			<xsd:element maxOccurs="1" minOccurs="1" name="CollectionID" type="AUTO_INCREMENT">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="CollectionType" type="Collection">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Address" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_ForeignKey">Address/AddressID</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKey_NotSep">false</xsd:appinfo>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Source" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:simpleType name="Collection">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Billing"/>
+			<xsd:enumeration value="Lead Management System"/>
+			<xsd:enumeration value="Inventory Management System"/>
+			<xsd:enumeration value="Sales Data Reporting"/>
+			<xsd:enumeration value="Sales Matching"/>
+			<xsd:enumeration value="Dealer Scoring"/>
+			<xsd:enumeration value="Dealer E Fund"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="ContactType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="ContactID" type="AUTO_INCREMENT">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="DID" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Hide">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Email" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Phone" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKey">Phone/PhoneID</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKey_NotSep">true</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKeyInfo">Phone/Number</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKeyInfo">Phone/Type</xsd:appinfo>
+					<xsd:appinfo source="X_Retrieve_FKinfos">true</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Source" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="DealerType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="DealerID" type="AUTO_INCREMENT">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="DealerName" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="DealerPreferredName" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="1" name="Make" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_ForeignKey">Make/MakeID</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKey_NotSep">true</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKeyInfo">Make/MakeName</xsd:appinfo>
+					<xsd:appinfo source="X_Retrieve_FKinfos">true</xsd:appinfo>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Collection" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_ForeignKey">Collection/CollectionID
+					</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKey_NotSep">false</xsd:appinfo>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Contact" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_ForeignKey">ContactInfo/ContactID</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKey_NotSep">true</xsd:appinfo>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+					<xsd:appinfo source="X_Retrieve_FKinfos">true</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Website" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="IP" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Status" type="DealerStatus">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Type" type="TypeEnum">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="SendLeads" type="xsd:boolean">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="LeadType" type="LeadTypeEnum">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="BillingType" type="BillingEnum">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="PhysicalAddress" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKey">Address/AddressID</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKey_NotSep">false</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKeyInfo">Address/Address1</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKeyInfo">Address/City</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKeyInfo">Address/State</xsd:appinfo>
+					<xsd:appinfo source="X_Retrieve_FKinfos">true</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="RooftopID" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKey">Rooftop/RooftopID</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKey_NotSep">true</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKeyInfo">Rooftop/RooftopName</xsd:appinfo>
+					<xsd:appinfo source="X_Retrieve_FKinfos">true</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="DealerGroup" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKey">DealerGroup/DealerGroupID
+					</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKey_NotSep">true</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKeyInfo">DealerGroup/Name</xsd:appinfo>
+					<xsd:appinfo source="X_Retrieve_FKinfos">true</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="SFAccount" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+					<xsd:appinfo source="X_Label_EN">SalesForce Account ID</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="TCDealerID" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="DealerGUID" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Source" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="KeyException" type="xsd:boolean">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="KeyExceptionSeq" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="MakeType">
+		<xsd:all>
+			<xsd:element maxOccurs="1" minOccurs="1" name="MakeID" type="AUTO_INCREMENT">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="ChromeID" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="MakeName" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Source" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:simpleType name="DealerStatus">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Active"/>
+			<xsd:enumeration value="Inactive"/>
+			<xsd:enumeration value="Pending"/>
+			<xsd:enumeration value="Cancelled"/>
+			<xsd:enumeration value="Suspended"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="AUTO_INCREMENT">
+		<xsd:restriction base="xsd:integer">
+			<xsd:pattern value="[\-+]?[0-9]+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="Rooftop" type="RooftopType">
+		<xsd:annotation>
+			<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:unique name="Rooftop">
+			<xsd:selector xpath="."/>
+			<xsd:field xpath="RooftopID"/>
+		</xsd:unique>
+	</xsd:element>
+	<xsd:complexType name="RooftopType">
+		<xsd:sequence>
+			<xsd:element maxOccurs="1" minOccurs="1" name="RooftopID" type="AUTO_INCREMENT">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="RooftopName" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="RooftopPreferredName" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="RooftopAddress" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_ForeignKey">Address/AddressID</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKey_NotSep">false</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKeyInfo">Address/Address1</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKeyInfo">Address/City</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKeyInfo">Address/State</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKeyInfo">Address/ZipCode</xsd:appinfo>
+					<xsd:appinfo source="X_Retrieve_FKinfos">true</xsd:appinfo>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="unbounded" minOccurs="0" name="Makes" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_ForeignKey">Make/MakeID</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKey_NotSep">true</xsd:appinfo>
+
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+					<xsd:appinfo source="X_ForeignKeyInfo">Make/MakeName</xsd:appinfo>
+					<xsd:appinfo source="X_Retrieve_FKinfos">true</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="RooftopGUID" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Source" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="DealerGroup" type="DealerGroupType">
+		<xsd:annotation>
+			<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+			<xsd:appinfo source="X_Label_EN">Dealer Group</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:unique name="DealerGroup">
+			<xsd:selector xpath="."/>
+			<xsd:field xpath="DealerGroupID"/>
+		</xsd:unique>
+	</xsd:element>
+	<xsd:complexType name="DealerGroupType">
+		<xsd:all>
+			<xsd:element maxOccurs="1" minOccurs="1" name="DealerGroupID" type="AUTO_INCREMENT">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Name" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="SalesForceID" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Label_EN">SalesForce Account ID</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Source" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:simpleType name="Address">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Postal"/>
+			<xsd:enumeration value="Billing"/>
+			<xsd:enumeration value="Shipment"/>
+			<xsd:enumeration value="Rooftop"/>
+			<xsd:enumeration value="Dealer"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="PhoneNoType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Cell"/>
+			<xsd:enumeration value="Fax"/>
+			<xsd:enumeration value="Office"/>
+			<xsd:enumeration value="Personal"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="UUID">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+	<xsd:element name="Phone" type="Phone">
+		<xsd:annotation>
+			<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:unique name="Phone">
+			<xsd:selector xpath="."/>
+			<xsd:field xpath="PhoneID"/>
+		</xsd:unique>
+	</xsd:element>
+	<xsd:complexType name="Phone">
+		<xsd:all>
+			<xsd:element maxOccurs="1" minOccurs="1" name="PhoneID" type="AUTO_INCREMENT">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Number" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Type" type="PhoneType">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="DID" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Hide">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element maxOccurs="1" minOccurs="0" name="Source" type="xsd:string">
+				<xsd:annotation>
+					<xsd:appinfo source="X_Write">TrueCarAdmin</xsd:appinfo>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:simpleType name="PhoneType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Home"/>
+			<xsd:enumeration value="Office"/>
+			<xsd:enumeration value="Cell"/>
+			<xsd:enumeration value="Fax"/>
+			<xsd:enumeration value="Work"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="TypeEnum">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Independent Dealer"/>
+			<xsd:enumeration value="Franchise Dealer"/>
+			<xsd:enumeration value="Non-TrueCar Dealer"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LeadTypeEnum">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="New"/>
+			<xsd:enumeration value="Used"/>
+			<xsd:enumeration value="Both"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="BillingEnum">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Pay per Sale (New $299 - Used $399)"/>
+			<xsd:enumeration value="Independent Dealer - 6 month Prepay"/>
+			<xsd:enumeration value="Modified Pay per Sale (New $299 - Used $399)"/>
+			<xsd:enumeration value="DriveTime"/>
+			<xsd:enumeration value="Pay per Sale (New $300 - Used $300)"/>
+			<xsd:enumeration value="Independent Dealer - Month to Month"/>
+			<xsd:enumeration value="Benchmark Close Rate (8.70% - $325)"/>
+			<xsd:enumeration value="Do Not Invoice"/>
+			<xsd:enumeration value="Total Loss"/>
+			<xsd:enumeration value="Pay per Sale (New $498 - Used $648)"/>
+			<xsd:enumeration value="Monthly Subscription (Rooftop)"/>
+			<xsd:enumeration value="Flat Monthly Subscription"/>
+			<xsd:enumeration value="Monthly Subscription (Make and Market Zone)"/>
+			<xsd:enumeration value="VPP"/>
+			<xsd:enumeration value="Benchmark Close Rate (6.00% - $300)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

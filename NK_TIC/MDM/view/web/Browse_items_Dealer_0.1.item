@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSViewE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_UxF8Qbu_EeSSFpkWJck6Fg" name="Browse_items_Dealer" description="[EN:Dealer]" timestamp="1449180446766" digestValue="44bfb497a9a22c535c7ff1f23e8ef5d2" transformerPK="">
+  <searchableBusinessElements>Dealer/DealerID</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/DealerName</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/DealerPreferredName</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/Make</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/Collection</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/Contact</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/Website</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/Source</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/Status</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/Type</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/SendLeads</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/LeadType</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/SFAccount</searchableBusinessElements>
+  <searchableBusinessElements>Dealer/TCDealerID</searchableBusinessElements>
+  <viewableBusinessElements>Dealer/DealerID</viewableBusinessElements>
+  <viewableBusinessElements>Dealer/Make</viewableBusinessElements>
+  <viewableBusinessElements>Dealer/DealerName</viewableBusinessElements>
+  <viewableBusinessElements>Dealer/RooftopID</viewableBusinessElements>
+  <viewableBusinessElements>Dealer/Source</viewableBusinessElements>
+  <isTransformerActive xmi:id="_BUirANoeEeSgg7iCO9lULg"/>
+</mdmserverobject:WSViewE>

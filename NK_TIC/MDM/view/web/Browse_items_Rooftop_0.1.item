@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSViewE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_hDYhMLunEeSSFpkWJck6Fg" name="Browse_items_Rooftop" description="[EN:Rooftop]" timestamp="1449180455876" digestValue="28fb4b9cafd52f7e4bbab824a4092296" transformerPK="">
+  <searchableBusinessElements>Rooftop/RooftopID</searchableBusinessElements>
+  <searchableBusinessElements>Rooftop/RooftopName</searchableBusinessElements>
+  <searchableBusinessElements>Rooftop/RooftopAddress</searchableBusinessElements>
+  <searchableBusinessElements>Rooftop/Makes</searchableBusinessElements>
+  <searchableBusinessElements>Rooftop/Source</searchableBusinessElements>
+  <viewableBusinessElements>Rooftop/RooftopID</viewableBusinessElements>
+  <viewableBusinessElements>Rooftop/RooftopName</viewableBusinessElements>
+  <viewableBusinessElements>Rooftop/RooftopAddress</viewableBusinessElements>
+  <viewableBusinessElements>Rooftop/Source</viewableBusinessElements>
+  <isTransformerActive xmi:id="_NAhWcNhcEeS5CLkhQFjuUg"/>
+</mdmserverobject:WSViewE>

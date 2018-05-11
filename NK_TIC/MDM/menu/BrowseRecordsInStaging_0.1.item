@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdmserverobject:WSMenuE xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:mdmserverobject="http://www.talend.org/mdmserverobject" xmi:id="_yXXXsH3JEeWpbdp7WBpTxQ" name="BrowseRecordsInStaging" description="BrowseRecordsInStaging" timestamp="1449180457157" digestValue="fc9cddf74857c5598a5838e441d819da">
+  <menuEntries xmi:id="_yXXXsX3JEeWpbdp7WBpTxQ" id="BrowseRecordsInStaging" application="BrowseRecordsInStaging" context="browserecords" icon="">
+    <descriptions xmi:id="_yXXXsn3JEeWpbdp7WBpTxQ" language="fr" label="Explorateur des données Staging"/>
+    <descriptions xmi:id="_yXXXs33JEeWpbdp7WBpTxQ" language="en" label="Staging Data Browser"/>
+  </menuEntries>
+</mdmserverobject:WSMenuE>
