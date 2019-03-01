@@ -12,6 +12,7 @@
     <module>jobs/process/KB_Largeload/kb_lkpcomb_nomin_0.1</module>
     <module>jobs/process/SimpleJobs/simple_matching_0.1</module>
     <module>jobs/process/data_matching/a_matchcustomers_0.1</module>
+    <module>code/routines</module>
   </modules>
   <properties>
     <talend.project.name>NK_TIC</talend.project.name>
