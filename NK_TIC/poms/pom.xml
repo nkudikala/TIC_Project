@@ -8,12 +8,17 @@
   <packaging>pom</packaging>
   <name>NK_TIC Codes Master</name>
   <url>http://www.talend.org/</url>
+  <modules>
+    <module>jobs/process/KB_Largeload/kb_lkpcomb_nomin_0.1</module>
+    <module>jobs/process/SimpleJobs/simple_matching_0.1</module>
+    <module>jobs/process/data_matching/a_matchcustomers_0.1</module>
+  </modules>
   <properties>
     <talend.project.name>NK_TIC</talend.project.name>
     <encoding>UTF-8</encoding>
     <talend.version>7.1.1</talend.version>
-    <talend.docker.tag>${project.version}</talend.docker.tag>
     <maven.deploy.skip>true</maven.deploy.skip>
+    <talend.docker.tag>${project.version}</talend.docker.tag>
     <talend.docker.name>${talend.project.name.lowercase}/${talend.job.folder}%a</talend.docker.name>
   </properties>
   <build>
