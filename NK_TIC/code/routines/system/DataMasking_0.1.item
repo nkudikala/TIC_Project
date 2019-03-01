@@ -1,6 +1,6 @@
 // ============================================================================
 //
-// Copyright (C) 2006-2016 Talend Inc. - www.talend.com
+// Copyright (C) 2006-2018 Talend Inc. - www.talend.com
 //
 // This source code is available under agreement available at
 // %InstallDIR%\features\org.talend.rcp.branding.%PRODUCTNAME%\%PRODUCTNAME%license.txt
@@ -13,29 +13,26 @@
 
 package routines;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.security.InvalidKeyException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.io.PushbackInputStream;
 import java.security.Key;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
-import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESKeySpec;
 import javax.crypto.spec.SecretKeySpec;
-
-import sun.misc.BASE64Decoder;
-import sun.misc.BASE64Encoder;
 
 /**
  * created by talend on 2016-04-08 Detailled comment.
@@ -55,9 +52,9 @@ public class DataMasking {
 
     static final Random random = new Random();
 
-    static final BASE64Encoder b64Encoder = new BASE64Encoder();
+    static final BASE64Encoder b64Encoder = new DataMasking().new BASE64Encoder();
 
-    static final BASE64Decoder b64Dencoder = new BASE64Decoder();
+    static final BASE64Decoder b64Dencoder = new DataMasking().new BASE64Decoder();
 
     /**
      * createMD2: Calculate MD2 hash value from String.
@@ -71,29 +68,32 @@ public class DataMasking {
      * 
      * {example} createMD2("foo") return is d11f8ce29210b4b50c5e67533b699d02
      * 
-     * @throws NoSuchAlgorithmException
      * 
      */
-    public static String createMD2(String message) throws NoSuchAlgorithmException {
+    public static String createMD2(String message) {
         if (message == null) {
             return "Input String for MD2 calculation is missing"; //$NON-NLS-1$
-        } else {
-            /* MD2 Calculation */
-            MessageDigest md2Instance = MessageDigest.getInstance("MD2"); //$NON-NLS-1$
-            md2Instance.reset();
-            md2Instance.update(message.getBytes());
-            byte[] result = md2Instance.digest();
-
-            /* Return */
-            StringBuffer hexString = new StringBuffer();
-            for (byte element : result) {
-                if (element <= 15 && element >= 0) {
-                    hexString.append("0"); //$NON-NLS-1$
-                }
-                hexString.append(Integer.toHexString(0xFF & element));
-            }
-            return hexString.toString();
+        } /* MD2 Calculation */
+        MessageDigest md2Instance = null;
+        try {
+            md2Instance = MessageDigest.getInstance("MD2"); //$NON-NLS-1$
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e.getMessage(), e);
         }
+        md2Instance.reset();
+        md2Instance.update(message.getBytes());
+        byte[] result = md2Instance.digest();
+
+        /* Return */
+        StringBuffer hexString = new StringBuffer();
+        for (byte element : result) {
+            if (element <= 15 && element >= 0) {
+                hexString.append("0"); //$NON-NLS-1$
+            }
+            hexString.append(Integer.toHexString(0xFF & element));
+        }
+        return hexString.toString();
+
     }
 
     /**
@@ -108,30 +108,34 @@ public class DataMasking {
      * 
      * {example} createMD5("foo") result is acbd18db4cc2f85cedef654fccc4a4d8
      * 
-     * @throws NoSuchAlgorithmException
-     * 
      */
 
-    public static String createMD5(String message) throws NoSuchAlgorithmException {
+    public static String createMD5(String message) {
         if (message == null) {
             return "Input String for MD5 calculation is missing"; //$NON-NLS-1$
-        } else {
-            /* Calculation */
-            MessageDigest thisMD5 = MessageDigest.getInstance("MD5"); //$NON-NLS-1$
-            thisMD5.reset();
-            thisMD5.update(message.getBytes());
-            byte[] result = thisMD5.digest();
-
-            /* Return */
-            StringBuffer hexString = new StringBuffer();
-            for (byte element : result) {
-                if (element <= 15 && element >= 0) {
-                    hexString.append("0"); //$NON-NLS-1$
-                }
-                hexString.append(Integer.toHexString(0xFF & element));
-            }
-            return hexString.toString();
         }
+
+        /* Calculation */
+        MessageDigest thisMD5 = null;
+        try {
+            thisMD5 = MessageDigest.getInstance("MD5"); //$NON-NLS-1$
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e.getMessage(), e);
+        }
+        thisMD5.reset();
+        thisMD5.update(message.getBytes());
+        byte[] result = thisMD5.digest();
+
+        /* Return */
+        StringBuffer hexString = new StringBuffer();
+        for (byte element : result) {
+            if (element <= 15 && element >= 0) {
+                hexString.append("0"); //$NON-NLS-1$
+            }
+            hexString.append(Integer.toHexString(0xFF & element));
+        }
+        return hexString.toString();
+
     }
 
     /**
@@ -244,22 +248,17 @@ public class DataMasking {
      * 
      * {example} encryptAES("foo") result is UQ0VJZq5ymFkMYQeDrPi0A==
      * 
-     * @throws NoSuchPaddingException
-     * @throws NoSuchAlgorithmException
-     * @throws InvalidKeyException
-     * @throws BadPaddingException
-     * @throws IllegalBlockSizeException
-     * 
      */
 
-    public static String encryptAES(String encryptString, byte[] keyValue) throws NoSuchAlgorithmException,
-            NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+    public static String encryptAES(String encryptString, byte[] keyValue) {
+
         if (encryptString == null || keyValue == null) {
             return NULL_PARAMETER_MESSAGE;
         }
         if (encryptString.length() == 0) {
             return EMPTY_PARAMETER_MESSAGE;
-        } else {
+        }
+        try {
             Key key = new SecretKeySpec(keyValue, ALGO);
             Cipher cipher = Cipher.getInstance(ALGO);
             cipher.init(Cipher.ENCRYPT_MODE, key);
@@ -267,6 +266,8 @@ public class DataMasking {
             String encryptedValue = b64Encoder.encode(encVal);
             return encryptedValue;
 
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage(), e);
         }
     }
 
@@ -285,17 +286,9 @@ public class DataMasking {
      * 
      * {example} decryptAES("UQ0VJZq5ymFkMYQeDrPi0A==") result is "foo"
      * 
-     * @throws NoSuchPaddingException
-     * @throws NoSuchAlgorithmException
-     * @throws InvalidKeyException
-     * @throws IOException
-     * @throws BadPaddingException
-     * @throws IllegalBlockSizeException
-     * 
      */
 
-    public static String decryptAES(String encryptedString, byte[] keyValue) throws NoSuchAlgorithmException,
-            NoSuchPaddingException, InvalidKeyException, IOException, IllegalBlockSizeException, BadPaddingException {
+    public static String decryptAES(String encryptedString, byte[] keyValue) {
 
         if (encryptedString == null || keyValue == null) {
             return NULL_PARAMETER_MESSAGE;
@@ -303,7 +296,8 @@ public class DataMasking {
 
         if (encryptedString.length() == 0) {
             return EMPTY_PARAMETER_MESSAGE;
-        } else {
+        }
+        try {
             Key key = new SecretKeySpec(keyValue, ALGO);
             Cipher cipher = Cipher.getInstance(ALGO);
             cipher.init(Cipher.DECRYPT_MODE, key);
@@ -312,6 +306,8 @@ public class DataMasking {
             String decryptedValue = new String(decValue);
             return decryptedValue;
 
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage(), e);
         }
     }
 
@@ -329,26 +325,18 @@ public class DataMasking {
      * 
      * {example} encryptDES("foo") result is DmNj+x2LUXA=
      * 
-     * @throws UnsupportedEncodingException
-     * @throws NoSuchAlgorithmException
-     * @throws NoSuchPaddingException
-     * @throws InvalidKeyException
-     * @throws InvalidKeySpecException
-     * @throws BadPaddingException
-     * @throws IllegalBlockSizeException
-     * 
      * @throws Exception
      */
 
-    public static String encryptDES(String unencryptedString, String myEncryptionKey) throws UnsupportedEncodingException,
-            NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException, InvalidKeySpecException,
-            IllegalBlockSizeException, BadPaddingException {
+    public static String encryptDES(String unencryptedString, String myEncryptionKey) {
+
         if (unencryptedString == null || myEncryptionKey == null) {
             return NULL_PARAMETER_MESSAGE;
         }
         if (unencryptedString.length() == 0) {
             return EMPTY_PARAMETER_MESSAGE;
-        } else {
+        }
+        try {
             String encryptedString = null;
 
             String myEncryptionScheme = DES_ENCRYPTION_SCHEME;
@@ -365,7 +353,10 @@ public class DataMasking {
 
             return encryptedString;
 
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
         }
+
     }
 
     /**
@@ -382,19 +373,9 @@ public class DataMasking {
      * 
      * {example} decryptDES("DmNj+x2LUXA=") result is "foo"
      * 
-     * @throws InvalidKeyException
-     * @throws NoSuchPaddingException
-     * @throws NoSuchAlgorithmException
-     * @throws InvalidKeySpecException
-     * @throws IOException
-     * @throws BadPaddingException
-     * @throws IllegalBlockSizeException
-     * 
      */
 
-    public static String decryptDES(String encryptedString, String myDecryptionKey) throws InvalidKeyException,
-            NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeySpecException, IOException, IllegalBlockSizeException,
-            BadPaddingException {
+    public static String decryptDES(String encryptedString, String myDecryptionKey) {
 
         if (encryptedString == null || myDecryptionKey == null) {
             return NULL_PARAMETER_MESSAGE;
@@ -402,7 +383,8 @@ public class DataMasking {
 
         if (encryptedString.length() == 0) {
             return EMPTY_PARAMETER_MESSAGE;
-        } else {
+        }
+        try {
             String decryptedText = null;
 
             String myDecryptionScheme = DES_ENCRYPTION_SCHEME;
@@ -425,6 +407,8 @@ public class DataMasking {
             decryptedText = stringBuffer.toString();
             return decryptedText;
 
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage(), e);
         }
 
     }
@@ -433,37 +417,27 @@ public class DataMasking {
      * Blurring ADD: Adds a random value from a certain range to an Integer value. Make new value random around the
      * input number
      * 
-     * 
      * {talendTypes} integer
      * 
      * {Category} Data Masking
      * 
-     * {param} int(1) inputvalue: To be a base value.Any return value will base this value.
+     * {param} int(1) basevalue: Any return value will base this value.
      * 
      * {param} int(5) rangefrom: Minimum value which make basevalue changed.It could be a positive integer or negative
      * integer
      * 
-     * {param} int(10) rangeto: Maximum value which make inputValue changed.It could be a positive integer or negative
+     * {param} int(10) rangeto: Maximum value which make basevalue changed.It could be a positive integer or negative
      * integer.
      * 
-     * And rangeto-rangefrom must get a positive integer or zero
-     * 
      * {example}
-     * 
-     * blurNumber(1,5,10) result is [6,11]
-     * 
-     * blurNumber(1,-10,-5) result is [-9,-4]
-     * 
-     * blurNumber(1,-10,10) result is [-9,11]
-     * 
+     * blurNumber(1,5,10) result is between [6,11)
+     * blurNumber(1,10,5) result is between [6,11)
+     * blurNumber(1,-10,-5) result is between [-9,-4)
+     * blurNumber(1,-10,10) result is between [-9,11)
      */
-
     public static int blurNumber(int basevalue, int rangefrom, int rangeto) {
         int range = rangeto - rangefrom;
-        if (range < 0) {
-            return basevalue;
-        }
-        int randomInt = random.nextInt(Math.abs(rangeto - rangefrom) + rangeto >= 0 ? 1 : -1) + rangefrom;
+        int randomInt = ((range >= 0 ? 1 : -1) * random.nextInt(Math.abs(range))) + rangefrom;
         return basevalue + randomInt;
     }
 
@@ -476,25 +450,20 @@ public class DataMasking {
      * 
      * {Category} Data Masking
      * 
-     * {param} long(1) inputvalue: To be a base value.Any return value will around this value.
+     * {param} long(1) basevalue: Any return value will around this value.
      * 
-     * {param} int(5) rangefrom: Minimum value which make inputValue changed.It must be a positive integer
+     * {param} int(5) rangefrom: Minimum value which make basevalue changed.It must be a positive integer.
      * 
-     * {param} int(10) rangeto: Maximum value which make inputValue changed.It must be a positive integer.And
-     * rangeto-rangefrom must get a positive integer or zero
+     * {param} int(10) rangeto: Maximum value which make basevalue changed.It must be a positive integer.
      * 
-     * {example} blurNumber(1,5,10) # returns any long by [-9,11]
-     * 
+     * {example}
+     * blurNumber(1,5,10) # returns any long between [6,11)
+     * blurNumber(1,10,5) # returns any long between [6,11)
      */
-
-    public static long blurNumber(long inputValue, int rangefrom, int rangeto) {
+    public static long blurNumber(long basevalue, int rangefrom, int rangeto) {
         int range = rangeto - rangefrom;
-        if (range < 0) {
-            return inputValue;
-        }
-        int randomInt = random.nextInt(Math.abs(rangeto - rangefrom) + rangeto >= 0 ? 1 : -1) + rangefrom;
-        return inputValue + randomInt;
-
+        int randomInt = ((range >= 0 ? 1 : -1) * random.nextInt(Math.abs(range))) + rangefrom;
+        return basevalue + randomInt;
     }
 
     /**
@@ -506,24 +475,21 @@ public class DataMasking {
      * 
      * {Category} Data Masking
      * 
-     * {param} double(1.5d) inputvalue: To be a base value.Any return value will around this value.
+     * {param} double(1.5d) basevalue: Any return value will around this value.
      * 
-     * {param} int(5) rangefrom: Minimum value which make inputValue changed.It must be a positive integer
+     * {param} int(5) rangefrom: Minimum value which make basevalue changed.It must be a positive integer.
      * 
-     * {param} int(10) rangeto: Maximum value which make inputValue changed.It must be a positive integer.And
-     * rangeto-rangefrom must get a positive integer or zero
+     * {param} int(10) rangeto: Maximum value which make basevalue changed.It must be a positive integer.
      * 
-     * {example} blurNumber(1.5,5,10) # returns any double by [-8.5,11.5)
+     * {example}
+     * blurNumber(1.5,5,10) # returns any double between [6.5,11.5)
+     * blurNumber(1.5,10,5) # returns any double between [6.5,11.5)
      * 
      */
-
-    public static double blurNumber(double inputValue, int rangefrom, int rangeto) {
+    public static double blurNumber(double basevalue, int rangefrom, int rangeto) {
         double range = 1.0 * (rangeto - rangefrom);
-        if (range < 0) {
-            return inputValue;
-        }
-        double randomInt = random.nextDouble() * Math.abs(rangeto - rangefrom) + rangefrom;
-        return inputValue + randomInt;
+        double randomInt = ((range >= 0 ? 1 : -1) * random.nextDouble() * Math.abs(range)) + rangefrom;
+        return basevalue + randomInt;
     }
 
     /**
@@ -535,25 +501,21 @@ public class DataMasking {
      * 
      * {Category} Data Masking
      * 
-     * {param} float(1.5) inputvalue: To be a base value.Any return value will around this value.
+     * {param} float(1.5) basevalue: Any return value will around this value.
      * 
-     * {param} int(5) rangefrom: Minimum value which make inputValue changed.It must be a positive integer
+     * {param} int(5) rangefrom: Minimum value which make basevalue changed.It must be a positive integer.
      * 
-     * {param} int(10) rangeto: Maximum value which make inputValue changed.It must be a positive integer.And
-     * rangeto-rangefrom must get a positive integer or zero
+     * {param} int(10) rangeto: Maximum value which make basevalue changed.It must be a positive integer.
      * 
-     * {example} blurNumber(1.5,5,10) # returns any integer by [-8.5,11.5)
+     * {example}
+     * blurNumber(1.5,5,10) # returns any integer between [6.5,11.5)
+     * blurNumber(1.5,10,5) # returns any integer between [6.5,11.5)
      * 
      */
-
-    public static float blurNumber(float inputValue, int rangefrom, int rangeto) {
+    public static float blurNumber(float basevalue, int rangefrom, int rangeto) {
         float range = 1.0f * (rangeto - rangefrom);
-        if (range < 0) {
-            return inputValue;
-        }
-        float randomInt = random.nextFloat() * Math.abs(rangeto - rangefrom) + rangefrom;
-        return inputValue + randomInt;
-
+        float randomInt = ((range >= 0 ? 1 : -1) * random.nextFloat() * Math.abs(range)) + rangefrom;
+        return basevalue + randomInt;
     }
 
     /**
@@ -697,4 +659,303 @@ public class DataMasking {
 
     }
 
+    private abstract class CharacterEncoder {
+
+        public CharacterEncoder() {
+        }
+
+        protected abstract int bytesPerAtom();
+
+        protected abstract int bytesPerLine();
+
+        protected void encodeBufferPrefix(OutputStream outputstream) throws IOException {
+            new PrintStream(outputstream);
+        }
+
+        protected void encodeBufferSuffix(OutputStream outputstream) throws IOException {
+            // nothing here
+        }
+
+        protected void encodeLinePrefix(OutputStream outputstream, int i) throws IOException {
+            // nothing here
+        }
+
+        protected void encodeLineSuffix(OutputStream outputstream) throws IOException {
+            // nothing here
+        }
+
+        protected abstract void encodeAtom(OutputStream outputstream, byte abyte0[], int i, int j) throws IOException;
+
+        protected int readFully(InputStream inputstream, byte abyte0[]) throws IOException {
+            for (int i = 0; i < abyte0.length; i++) {
+                int j = inputstream.read();
+                if (j == -1)
+                    return i;
+                abyte0[i] = (byte) j;
+            }
+
+            return abyte0.length;
+        }
+
+        public void encode(InputStream inputstream, OutputStream outputstream) throws IOException {
+            byte abyte0[] = new byte[bytesPerLine()];
+            encodeBufferPrefix(outputstream);
+            do {
+                int j = readFully(inputstream, abyte0);
+                if (j == 0)
+                    break;
+                encodeLinePrefix(outputstream, j);
+                for (int i = 0; i < j; i += bytesPerAtom())
+                    if (i + bytesPerAtom() <= j)
+                        encodeAtom(outputstream, abyte0, i, bytesPerAtom());
+                    else
+                        encodeAtom(outputstream, abyte0, i, j - i);
+
+                if (j < bytesPerLine())
+                    break;
+                encodeLineSuffix(outputstream);
+            } while (true);
+            encodeBufferSuffix(outputstream);
+        }
+
+        public String encode(byte abyte0[]) {
+            ByteArrayOutputStream bytearrayoutputstream = new ByteArrayOutputStream();
+            ByteArrayInputStream bytearrayinputstream = new ByteArrayInputStream(abyte0);
+            String s = null;
+            try {
+                encode(((InputStream) (bytearrayinputstream)), ((OutputStream) (bytearrayoutputstream)));
+                s = bytearrayoutputstream.toString("8859_1"); //$NON-NLS-1$
+            } catch (Exception exception) {
+                throw new Error("ChracterEncoder::encodeBuffer internal error"); //$NON-NLS-1$
+            }
+            return s;
+        }
+    }
+
+    private class BASE64Encoder extends CharacterEncoder {
+
+        public BASE64Encoder() {
+        }
+
+        protected int bytesPerAtom() {
+            return 3;
+        }
+
+        protected int bytesPerLine() {
+            return 57;
+        }
+
+        protected void encodeAtom(OutputStream outputstream, byte abyte0[], int i, int j) throws IOException {
+            if (j == 1) {
+                byte byte0 = abyte0[i];
+                int k = 0;
+                outputstream.write(pem_array[byte0 >>> 2 & 0x3f]);
+                outputstream.write(pem_array[(byte0 << 4 & 0x30) + (k >>> 4 & 0xf)]);
+                outputstream.write(61);
+                outputstream.write(61);
+            } else if (j == 2) {
+                byte byte1 = abyte0[i];
+                byte byte3 = abyte0[i + 1];
+                int l = 0;
+                outputstream.write(pem_array[byte1 >>> 2 & 0x3f]);
+                outputstream.write(pem_array[(byte1 << 4 & 0x30) + (byte3 >>> 4 & 0xf)]);
+                outputstream.write(pem_array[(byte3 << 2 & 0x3c) + (l >>> 6 & 3)]);
+                outputstream.write(61);
+            } else {
+                byte byte2 = abyte0[i];
+                byte byte4 = abyte0[i + 1];
+                byte byte5 = abyte0[i + 2];
+                outputstream.write(pem_array[byte2 >>> 2 & 0x3f]);
+                outputstream.write(pem_array[(byte2 << 4 & 0x30) + (byte4 >>> 4 & 0xf)]);
+                outputstream.write(pem_array[(byte4 << 2 & 0x3c) + (byte5 >>> 6 & 3)]);
+                outputstream.write(pem_array[byte5 & 0x3f]);
+            }
+        }
+
+    }
+
+    private abstract class CharacterDecoder {
+
+        protected abstract int bytesPerAtom();
+
+        protected abstract int bytesPerLine();
+
+        protected void decodeBufferPrefix(PushbackInputStream paramPushbackInputStream, OutputStream paramOutputStream)
+                throws IOException {
+            // nothing here
+        }
+
+        protected void decodeBufferSuffix(PushbackInputStream paramPushbackInputStream, OutputStream paramOutputStream)
+                throws IOException {
+            // nothing here
+        }
+
+        protected int decodeLinePrefix(PushbackInputStream paramPushbackInputStream, OutputStream paramOutputStream)
+                throws IOException {
+            return bytesPerLine();
+        }
+
+        protected void decodeLineSuffix(PushbackInputStream paramPushbackInputStream, OutputStream paramOutputStream)
+                throws IOException {
+            // nothing here
+        }
+
+        protected void decodeAtom(PushbackInputStream paramPushbackInputStream, OutputStream paramOutputStream, int paramInt)
+                throws IOException {
+            throw new CEStreamExhausted("CEStreamExhausted"); //$NON-NLS-1$
+        }
+
+        protected int readFully(InputStream paramInputStream, byte[] paramArrayOfByte, int paramInt1, int paramInt2)
+                throws IOException {
+            for (int i = 0; i < paramInt2; i++) {
+                int j = paramInputStream.read();
+                if (j == -1)
+                    return i == 0 ? -1 : i;
+                paramArrayOfByte[(i + paramInt1)] = (byte) j;
+            }
+            return paramInt2;
+        }
+
+        public void decodeBuffer(InputStream paramInputStream, OutputStream paramOutputStream) throws IOException {
+            int j = 0;
+            PushbackInputStream localPushbackInputStream = new PushbackInputStream(paramInputStream);
+            decodeBufferPrefix(localPushbackInputStream, paramOutputStream);
+            try {
+                do {
+                    int k = decodeLinePrefix(localPushbackInputStream, paramOutputStream);
+                    int i;
+                    for (i = 0; i + bytesPerAtom() < k; i += bytesPerAtom()) {
+                        decodeAtom(localPushbackInputStream, paramOutputStream, bytesPerAtom());
+                        j += bytesPerAtom();
+                    }
+
+                    if (i + bytesPerAtom() == k) {
+                        decodeAtom(localPushbackInputStream, paramOutputStream, bytesPerAtom());
+                        j += bytesPerAtom();
+                    } else {
+                        decodeAtom(localPushbackInputStream, paramOutputStream, k - i);
+                        j += k - i;
+                    }
+                    decodeLineSuffix(localPushbackInputStream, paramOutputStream);
+                } while (true);
+            } catch (IOException e) {
+                if (e.getMessage().equals("CEStreamExhausted")) //$NON-NLS-1$
+                    decodeBufferSuffix(localPushbackInputStream, paramOutputStream);
+                else
+                    throw e;
+            }
+        }
+
+        public byte[] decodeBuffer(String paramString) throws IOException {
+            byte[] arrayOfByte = new byte[paramString.length()];
+            paramString.getBytes(0, paramString.length(), arrayOfByte, 0);
+            ByteArrayInputStream localByteArrayInputStream = new ByteArrayInputStream(arrayOfByte);
+            ByteArrayOutputStream localByteArrayOutputStream = new ByteArrayOutputStream();
+            decodeBuffer(localByteArrayInputStream, localByteArrayOutputStream);
+            return localByteArrayOutputStream.toByteArray();
+        }
+    }
+
+    private static final char[] pem_array = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
+            'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm',
+            'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+            '+', '/' };
+
+    private static final byte[] pem_convert_array = new byte[256];
+
+    static {
+        for (int i = 0; i < 255; i++)
+            pem_convert_array[i] = -1;
+        for (int i = 0; i < pem_array.length; i++)
+            pem_convert_array[pem_array[i]] = (byte) i;
+    }
+
+    private class BASE64Decoder extends CharacterDecoder {
+
+        byte[] decode_buffer = new byte[4];
+
+        protected int bytesPerAtom() {
+            return 4;
+        }
+
+        protected int bytesPerLine() {
+            return 72;
+        }
+
+        @Override
+        protected void decodeAtom(PushbackInputStream inStream, OutputStream outStream, int rem) throws IOException {
+            int i;
+            byte a = -1, b = -1, c = -1, d = -1;
+
+            if (rem < 2) {
+                throw new CEFormatException("BASE64Decoder: Not enough bytes for an atom."); //$NON-NLS-1$
+            }
+            do {
+                i = inStream.read();
+                if (i == -1) {
+                    throw new CEStreamExhausted("CEStreamExhausted"); //$NON-NLS-1$
+                }
+            } while (i == '\n' || i == '\r');
+            decode_buffer[0] = (byte) i;
+
+            i = readFully(inStream, decode_buffer, 1, rem - 1);
+            if (i == -1) {
+                throw new CEStreamExhausted("CEStreamExhausted"); //$NON-NLS-1$
+            }
+
+            if (rem > 3 && decode_buffer[3] == '=') {
+                rem = 3;
+            }
+            if (rem > 2 && decode_buffer[2] == '=') {
+                rem = 2;
+            }
+            switch (rem) {
+            case 4:
+                d = pem_convert_array[decode_buffer[3] & 0xff];
+                // NOBREAK
+            case 3:
+                c = pem_convert_array[decode_buffer[2] & 0xff];
+                // NOBREAK
+            case 2:
+                b = pem_convert_array[decode_buffer[1] & 0xff];
+                a = pem_convert_array[decode_buffer[0] & 0xff];
+                break;
+            }
+
+            switch (rem) {
+            case 2:
+                outStream.write((byte) (((a << 2) & 0xfc) | ((b >>> 4) & 3)));
+                break;
+            case 3:
+                outStream.write((byte) (((a << 2) & 0xfc) | ((b >>> 4) & 3)));
+                outStream.write((byte) (((b << 4) & 0xf0) | ((c >>> 2) & 0xf)));
+                break;
+            case 4:
+                outStream.write((byte) (((a << 2) & 0xfc) | ((b >>> 4) & 3)));
+                outStream.write((byte) (((b << 4) & 0xf0) | ((c >>> 2) & 0xf)));
+                outStream.write((byte) (((c << 6) & 0xc0) | (d & 0x3f)));
+                break;
+            }
+            return;
+        }
+
+    }
+
+    private class CEStreamExhausted extends IOException {
+
+        static final long serialVersionUID = -5889118049525891904L;
+
+        public CEStreamExhausted(String paramString) {
+            super(paramString);
+        }
+    }
+
+    private class CEFormatException extends IOException {
+
+        static final long serialVersionUID = -7139121221067081482L;
+
+        public CEFormatException(String paramString) {
+            super(paramString);
+        }
+    }
 }
